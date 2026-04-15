@@ -1,16 +1,4 @@
 {
-  "projects": [
-    {
-      "name": "frontend",
-      "root": "frontend"
-    },
-    {
-      "name": "panel",
-      "root": "panel"
-    },
-    {
-      "name": "api",
-      "root": "."
-    }
-  ]
+  "buildCommand": "npm run build",
+  "outputDirectory": "build"
 }
