@@ -78,12 +78,34 @@ A full-stack web application featuring a backend API, a React frontend, and an a
 - **Frontend:** `cd frontend && npm run build`
 - **Panel:** `cd panel && npm run build`
 
+## Deployment on Vercel
+
+This project is configured for deployment on Vercel as a monorepo.
+
+1. **Environment Variables:**
+   Copy `.env.example` to `.env` and fill in your values. In Vercel dashboard, add these environment variables:
+   - `MONGO_URI`
+   - `JWT_SECRET`
+   - `EMAIL_USER`
+   - `EMAIL_PASS`
+   - `ADMIN_EMAIL`
+   - `ADMIN_PASSWORD`
+
+2. **Deploy:**
+   - Connect your GitHub repo to Vercel.
+   - Vercel will detect the monorepo and deploy three projects: `frontend`, `panel`, and `api`.
+   - The API will be serverless functions under `/api`.
+   - Frontend at root domain.
+   - Panel can be accessed via the panel project URL or configured subdomain.
+
 ## Technologies Used
 
-- **Backend:** Node.js, Express.js
+- **Backend:** Node.js, Express.js (converted to Vercel serverless functions)
 - **Frontend:** React, CSS
 - **Panel:** Vite, React, Tailwind CSS
 - **Authentication:** Context API for state management
+- **Database:** MongoDB
+- **Deployment:** Vercel
 
 ## Contributing
 

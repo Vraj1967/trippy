@@ -9,7 +9,7 @@ export default function Contacts() {
   const { token } = useAuth();
 
   const fetchContacts = () => {
-    fetch('http://localhost:5000/admin/contacts', {
+    fetch('/api/admin/contacts', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())
@@ -21,7 +21,7 @@ export default function Contacts() {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this message?')) return;
-    await fetch(`http://localhost:5000/admin/contacts/${id}`, {
+    await fetch(`/api/admin/contacts/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     });

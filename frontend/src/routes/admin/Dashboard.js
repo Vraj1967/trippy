@@ -8,7 +8,7 @@ export default function Dashboard() {
   const { token } = useAuth();
 
   useEffect(() => {
-    fetch('http://localhost:5000/admin/stats', {
+    fetch('/api/admin/stats', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())

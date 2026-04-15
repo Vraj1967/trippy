@@ -8,7 +8,7 @@ export default function Users() {
   const { token } = useAuth();
 
   const fetchUsers = () => {
-    fetch('http://localhost:5000/admin/users', {
+    fetch('/api/admin/users', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())
@@ -20,7 +20,7 @@ export default function Users() {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this user?')) return;
-    await fetch(`http://localhost:5000/admin/users/${id}`, {
+    await fetch(`/api/admin/users/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     });
